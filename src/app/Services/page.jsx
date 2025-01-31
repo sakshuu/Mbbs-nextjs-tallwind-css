@@ -1,7 +1,10 @@
 "use client";
 
 import Image from 'next/image';
-import services_bg_fill from './../assets/img/services_bg_fill.png'
+import logo from './../assets/img/logo.png'
+import profile from './../assets/img/profile.png'
+import stare from './../assets/img/stare.png'
+
 
 
 // Array of objects for partner universities
@@ -9,17 +12,22 @@ const universitiesData = [
   {
     id: 1,
     name: "MGBS",
-    image: "/assets/university-1.jpg",
+    image: logo,
   },
   {
     id: 2,
     name: "MGBS",
-    image: "/assets/university-2.jpg",
+    image: logo,
   },
   {
     id: 3,
     name: "MGBS",
-    image: "/assets/university-3.jpg",
+    image: logo,
+  },
+  {
+    id: 4,
+    name: "MGBS",
+    image: logo,
   },
 ];
 
@@ -28,21 +36,21 @@ const testimonialsData = [
   {
     id: 1,
     name: "John Doe",
-    image: "/assets/profile-1.jpg",
+    image: stare,
     comment:
       "Augue nulla monies, eget conge dolor magna vitae portitor. Mollis aliquam fristique portitor blandit nbin du fristique quam.",
   },
   {
     id: 2,
     name: "Smitha Doe",
-    image: "/assets/profile-2.jpg",
+    image: stare,
     comment:
       "Augue nulla monies, eget conge dolor magna vitae portitor. Mollis aliquam fristique portitor blandit nbin du fristique quam.",
   },
   {
     id: 3,
     name: "Jaguine Doe",
-    image: "/assets/profile-3.jpg",
+    image: stare,
     comment:
       "Augue nulla monies, eget conge dolor magna vitae portitor. Mollis aliquam fristique portitor blandit nbin du fristique quam.",
   },
@@ -118,8 +126,8 @@ export default function Services() {
         {/* Content Container */}
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Section Title */}
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-center mb-12 text-gray-800">
-            Our Valuable Services
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-center mb-12 text-gray-800">
+            Our Valuable <span className='underline text-blue-400'>Services</span> 
           </h2>
 
           {/* Services Grid */}
@@ -146,32 +154,30 @@ export default function Services() {
       {/* Our Partners Universities Section */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Title */}
-        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-center mb-8 text-gray-800">
-          Our Partners Universities
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-center mb-8 text-gray-800">
+          Our Partners <span className='text-blue-400'>Universities</span> 
         </h2>
         <p className="text-lg text-gray-600 text-center mb-12">
           We are affiliated with these medical universities
         </p>
 
         {/* Universities Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
           {universitiesData.map((university) => (
             <div
               key={university.id}
-              className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 border border-gray-200 text-center"
+              className=" flex justify-center"
             >
               {/* University Image */}
-              <div className="relative h-40 w-full mb-4">
+              <div className="relative h-20 w-20  mb-4">
                 <Image
                   src={university.image}
                   alt={university.name}
                   fill
-                  className="object-cover rounded-lg"
+                  className=" rounded-lg"
                 />
               </div>
 
-              {/* University Name */}
-              <h3 className="text-xl font-bold text-blue-600">{university.name}</h3>
             </div>
           ))}
         </div>
@@ -180,8 +186,8 @@ export default function Services() {
       {/* Our Happy Students Section */}
       <div className="mt-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Title */}
-        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-center mb-8 text-gray-800">
-          Our Happy Students
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-center mb-8 text-gray-800">
+          Our Happy <span className='text-blue-400 '>Students</span>  
         </h2>
         <p className="text-lg text-gray-600 text-center mb-12">
           What Our Students Have to Say
@@ -197,7 +203,7 @@ export default function Services() {
               {/* Quote Icon */}
               <div className="flex justify-center mb-4">
                 <Image
-                  src="/assets/quote-icon.png"
+                  src={profile}
                   alt="Quote Icon"
                   width={40}
                   height={40}
@@ -205,6 +211,7 @@ export default function Services() {
                 />
               </div>
 
+                <h3 className="text-xl text-center font-bold text-blue-600">{testimonial.name}</h3>
               {/* Student Comment */}
               <p className="text-gray-700 text-center mb-6">{testimonial.comment}</p>
 
@@ -218,7 +225,6 @@ export default function Services() {
                     className="object-cover rounded-full"
                   />
                 </div>
-                <h3 className="text-xl font-bold text-blue-600">{testimonial.name}</h3>
               </div>
             </div>
           ))}

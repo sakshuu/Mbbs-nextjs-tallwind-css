@@ -11,7 +11,7 @@ export default function MyNavbar() {
   };
 
   return (<>
-  <nav className="bg-black shadow-md">
+  <nav className="bg-black shadow-md ">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
           {/* Logo */}
@@ -58,7 +58,7 @@ export default function MyNavbar() {
           <div
             className={`${
               isOpen ? 'block' : 'hidden'
-            } sm:flex sm:space-x-8 sm:items-center absolute sm:static top-16 left-0 right-0 shadow-md sm:shadow-none z-10`}
+            } sm:flex  sm:space-x-8 sm:items-center relative sm:static top-16 left-0 right-0 shadow-md sm:shadow-none z-10 bg-black`}
           >
             <Link href="/" className="block sm:inline-block px-4 py-2 text-gray-50 hover:text-blue-300">
               Home

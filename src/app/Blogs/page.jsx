@@ -6,6 +6,7 @@ import 'swiper/css'; // Swiper core CSS
 import 'swiper/css/pagination'; // Swiper pagination CSS
 import { Pagination } from 'swiper/modules'; // Swiper pagination module
 import blogs from './../assets/img/blogs.png'; // Import blog image
+import profile from './../assets/img/profile.png'; // Import blog image
 
 // Array of objects for blogs
 const blogsData = [
@@ -42,8 +43,8 @@ export default function Myblogs() {
   return (
     <div className="relative py-16 bg-gray-50">
       {/* Section Title */}
-      <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-center mb-8 text-gray-800">
-        Our Latest Blogs
+      <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-center mb-8 text-gray-800">
+        Our Latest <span className='text-blue-400 underline'>Blogs</span> 
       </h2>
       <p className="text-lg text-gray-600 text-center mb-12">
         Empowering Future Doctors with Valuable Information!
@@ -91,7 +92,7 @@ export default function Myblogs() {
                 <div className="flex items-center space-x-4">
                   <div className="relative h-10 w-10">
                     <Image
-                      src="/assets/profile-icon.png" // Replace with your profile icon path
+                      src={profile} // Replace with your profile icon path
                       alt="Profile Icon"
                       fill
                       className="object-cover rounded-full"
@@ -102,11 +103,13 @@ export default function Myblogs() {
                     <p className="text-gray-600">{blog.date}</p>
                   </div>
                 </div>
+<div className='flex justify-center'>
 
                 {/* Read More Button */}
-                <button className="mt-6 bg-blue-600 text-white font-bold px-6 py-2 rounded-lg hover:bg-blue-700 transition duration-300">
+                <button className="mt-6 bg-blue-500 text-white font-bold px-6 py-2 rounded-lg hover:bg-blue-500 transition duration-300">
                   Read more
                 </button>
+</div>
               </div>
             </SwiperSlide>
           ))}

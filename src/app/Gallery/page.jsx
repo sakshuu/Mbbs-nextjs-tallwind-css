@@ -43,14 +43,14 @@ export default function PhotoGallery() {
     <div className="bg-gray-100 p-8">
       <div className="max-w-4xl mx-auto text-center">
         {/* Title */}
-        <h1 className="text-4xl font-bold mb-4">Recent Photo Gallery</h1>
+        <h1 className="text-4xl font-bold mb-4">Recent Photo <span className='text-blue-400 underline'>Gallery</span> </h1>
         <p className="text-xl mb-8">Celebrating Achievements, One Click at a Time!</p>
 
         {/* Gallery Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
           {galleryImages.map((image) => (
-            <div key={image.id} className="bg-white p-4 shadow-lg rounded-lg">
-              <img
+            <div key={image.id} className="bg-white p-4  rounded-lg">
+              <Image
                 src={image.src}
                 alt={image.alt}
                 className="h-48 w-full object-cover rounded-lg"

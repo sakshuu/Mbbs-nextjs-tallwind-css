@@ -1,33 +1,19 @@
 'use client';
 
 import Image from 'next/image';
-import { useState } from 'react';
+import from from './../assets/img/from.png'
 
-const services = ['Home', 'Universities', 'MBBS in Uzbekistan'];
-const company = ['About Us', 'Blogs', 'Gallery'];
-const contactInfo = [
-  { type: 'phone', value: '343455645' },
-  { type: 'email', value: 'mangcoding123@gmail.com' },
-  { type: 'address', value: '2972 Westheimer Rd. Santa Ana, Illinois 85486' },
-];
-const cities = [
-    'Mumbai', 'Delhi', 'Bangalore', 'Hyderabad', 'Chennai', 'Kolkata', 'Pune', 'Ahmedabad'
-  ];
 
 export default function Myfooter() {
-  const [form, setForm] = useState({ name: '', email: '', mobile: '', city: '' });
 
-  const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
-  };
-
-  return (<>
-
-
+return (<>
 
 <div className="bg-gray-100 min-h-screen flex items-center justify-center p-4">
       <div className="bg-white p-8 rounded-lg shadow-lg max-w-4xl w-full">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="flex items-center justify-center">
+            <Image src={from} alt="MBBS Journey" width={400} height={400} className="rounded-lg" />
+          </div>
           <div className="flex flex-col justify-center">
             <h1 className="text-3xl font-bold text-gray-800 mb-4">Get Personalized Guidance for Your MBBS Journey</h1>
             <form className="space-y-4">
@@ -43,9 +29,7 @@ export default function Myfooter() {
               <button className="w-full bg-blue-600 text-white p-2 rounded-lg hover:bg-blue-700">Apply Now</button>
             </form>
           </div>
-          <div className="flex items-center justify-center">
-            <Image src="/path-to-your-image.png" alt="MBBS Journey" width={400} height={400} className="rounded-lg" />
-          </div>
+
         </div>
       </div>
     </div>

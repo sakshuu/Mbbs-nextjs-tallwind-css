@@ -6,28 +6,35 @@ import bg_docter from './../assets/img/bg_docter.png'
 import doctor_img from './../assets/img/doctor_img.png'
 import header_tag from './../assets/img/header_tag.png'
 import Whatsapp from './../assets/img/Whatsapp.png'
-import titik_titik from './../assets/img/Titik_titik.png'
+import education from './../assets/img/education.png'
 
 const cardsData = [
   {
     id: 1,
     title: "Education",
-    description:
-      "Get the best of quality education in Uzbekistan with the most skilled professionals.",
+    description: "Get the best of quality education in Uzbekistan with the most skilled professionals.",
+    icon: education // Replace with your icon path
   },
   {
     id: 2,
     title: "Admission",
-    description:
-      "Direct Admissions. Students will get direct admission to the medical University of Uzbekistan.",
+    description: "Direct Admissions. Students will get direct admission to the medical University of Uzbekistan.",
+    icon: education // Replace with your icon path
   },
   {
     id: 3,
     title: "Living & Accommodation",
-    description:
-      "Living & Accommodation is quite better, and the cost of living in Uzbekistan is low.",
+    description: "Living & Accommodation is quite better, and the cost of living in Uzbekistan is low.",
+    icon: education // Replace with your icon path
+  },
+  {
+    id: 4,
+    title: "Low Tuition Fees",
+    description: "Low tuition fee Medical universities in Uzbekistan.",
+    icon: education // Replace with your icon path
   },
 ];
+
 
 const NavHome = () => {
   return ( <>
@@ -131,37 +138,25 @@ const NavHome = () => {
 
 
 
-    <div className="relative py-16 bg-gray-50 ">
-      {/* Blue Tick-Tick Line Image */}
-      <div className="absolute top-0 left-0 right-0 z-0 mt-10">
-        <Image
-          src={titik_titik}
-          alt="Blue Tick-Tick Line"
-          width={1400}
-          height={10}
-          className="w-80 h-80"
-        />
-      </div>
+    <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-center mb-12 text-gray-800">
+        Why Study MBBS in <span className='text-blue-400 underline'>Uzbekistan?</span> 
+      </h2>
 
-      {/* Content Container */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Title */}
-        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-center mb-12 text-gray-800">
-          Why Study MBBS in Uzbekistan?
-        </h2>
-
-        {/* Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {cardsData.map((card) => (
-            <div
-              key={card.id}
-              className="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 border border-gray-200"
-            >
-              <h3 className="text-2xl font-bold mb-4 text-blue-600">{card.title}</h3>
-              <p className="text-gray-700 leading-relaxed">{card.description}</p>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {cardsData.map((card) => (
+          <div
+            key={card.id}
+            className="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 border border-gray-200 flex flex-col items-center text-center h-72 w-64 relative"
+          >
+            {/* Icon Container */}
+            <div className="absolute -top-6 left-6 bg-white p-2 rounded-lg shadow-lg border border-gray-200">
+              <Image src={card.icon} alt={card.title} width={48} height={48} className="rounded-lg" /> {/* Icon */}
             </div>
-          ))}
-        </div>
+            <h3 className="text-2xl font-bold mb-4 text-blue-600 mt-12">{card.title}</h3>
+            <p className="text-gray-700 leading-relaxed">{card.description}</p>
+          </div>
+        ))}
       </div>
     </div>
   </>

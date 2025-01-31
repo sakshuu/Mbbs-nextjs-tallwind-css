@@ -6,6 +6,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import { Pagination } from 'swiper/modules';
 import university from './../assets/img/university.png'
+import education from './../assets/img/education.png'
 import medi from './../assets/img/medi.png'
 
 // Array of objects for university cards
@@ -96,10 +97,10 @@ export default function InstituteSeaction() {
   
     <div className="relative py-16 bg-gray-50">
       {/* Section Title */}
-      <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-center mb-12 text-gray-800">
-        Explore Medical Universities in Uzbekistan
+      <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-center mb-12 text-gray-800">
+        Explore <span className='text-blue-400 underline'>Medical Universities</span>  in Uzbekistan
       </h2>
-
+      
       {/* Carousel Container */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <Swiper
@@ -139,6 +140,15 @@ export default function InstituteSeaction() {
 
                 {/* Fee Structure */}
                 <p className="text-gray-700">{university.fee}</p>
+                <div className='flex justify-between mt-4'>
+
+                <button class="px-6 py-2 border-2 border-blue-400 text-blue-400 font-semibold rounded-lg hover:bg-blue-400 hover:text-white transition duration-300">
+  Apply Now
+</button>
+          <button className="bg-blue-400 text-white font-semibold px-8 py-3 rounded-lg hover:bg-blue-500 transition duration-300">
+            Apply Now
+          </button>
+                </div>
               </div>
             </SwiperSlide>
           ))}
@@ -150,11 +160,28 @@ export default function InstituteSeaction() {
 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
   <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
     {/* Left Section - Features */}
+    <div className="relative">
+      <Image
+        src={medi}
+        alt="Trusted Students"
+        width={656}
+        height={552}
+        className="w-full h-auto rounded-lg"
+      />
+      {/* Overlay Text */}
+      <div className="absolute bottom-8 left-8 bg-white p-4 rounded-lg shadow-md">
+        <p className="text-xl font-bold text-blue-400">10k+ Trusted Students</p>
+      </div>
+    </div>
+
+    {/* Right Section - Image */}
+    
+
     <div>
       {/* Section Title */}
-      <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-8 text-gray-800">
-        Why Uzbekistan Medi?
-      </h2>
+      <div className="text-3xl sm:text-4xl lg:text-5xl font-semibold mb-8 text-gray-800">
+        Why <span className='text-blue-400 underline'> Uzbekistan Medi? </span>
+      </div>
 
       {/* Features List */}
       <div className="space-y-8">
@@ -182,20 +209,6 @@ export default function InstituteSeaction() {
       </button>
     </div>
 
-    {/* Right Section - Image */}
-    <div className="relative">
-      <Image
-        src={medi}
-        alt="Trusted Students"
-        width={656}
-        height={552}
-        className="w-full h-auto rounded-lg"
-      />
-      {/* Overlay Text */}
-      <div className="absolute bottom-8 left-8 bg-white p-4 rounded-lg shadow-md">
-        <p className="text-xl font-bold text-blue-400">10k+ Trusted Students</p>
-      </div>
-    </div>
   </div>
 </div>
 </div>
@@ -208,7 +221,17 @@ export default function InstituteSeaction() {
   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
       {statisticsData.map((stat) => (
-        <div key={stat.id} className="text-center">
+        <div key={stat.id} className="text-center ">
+          <div className='flex justify-center'>
+
+          <Image
+        src={education}
+        alt="Trusted Students"
+        width={50}
+        height={50}
+        className="rounded-lg"
+        />
+        </div>
           <h3 className="text-4xl font-bold text-blue-600">{stat.value}</h3>
           <p className="text-lg text-gray-700 mt-2">{stat.label}</p>
         </div>
